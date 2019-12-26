@@ -1,0 +1,36 @@
+ion-slides{
+    img{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+ion-searchbar
+{
+    border-radius: 25px;
+}
+
+
+ion-card
+{
+    height:120px;
+    width: 105px;
+    margin-left: -0.5px;
+    border-radius: 5px;
+    img{
+        height: 45%;
+        width: 70%;
+        margin-left: 10px;
+    }
+    p{
+        font-size: small;
+        text-align: center;
+       
+    }
+}
+
+p{
+    color: black;
+    font-size: medium;
+}

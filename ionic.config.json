@@ -1,0 +1,7 @@
+{
+  "name": "KnorrBreMse",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

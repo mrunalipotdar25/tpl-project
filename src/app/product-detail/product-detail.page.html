@@ -1,0 +1,38 @@
+<header>
+  <img src="assets/icon/logo.png">
+</header>
+
+<ion-content>
+
+ 
+     <ion-item *ngFor="let product of Products" >
+       
+      <div>
+        
+          <ion-card>
+            <img src="{{product.Picture}}">
+          </ion-card>
+          
+        
+          <p style="font-size: large; color: #000;"><b>{{product.Name}}</b></p>
+          <p>{{product.Price}}</p>
+          <p></p>
+          <p><label style="color: gray;">Vehical Model:{{product.ModelNo[0].ModelNo}}</label><b></b></p> 
+          <p><label style="color: gray;">KB Part No.{{product.KB_Part_No}}</label><b></b></p>
+          <p><label style="color: gray;">AM Part No.{{product.AM_Part_No}}</label><b></b></p>
+          <p><label style="color: gray;">Part No.{{product.OEM_Part_No}}</label><b></b></p>
+          <p style="font-size: medium; color: gray;"><b></b></p>
+          <p><b>FRONT & REAR</b></p>
+          <p><label style="font-size: medium; color: gray;"><b>{{product.Type_FF_RR}}</b></label></p>
+          <p><b>Functions</b></p>
+          <p><label style="font-size: medium; color: gray;"><b>{{product.Product_Function}}</b></label></p>
+          <p><b>Features</b></p>
+         
+          <p><label style="font-size: medium; color: gray;"><b>{{product.Features}}</b></label></p>
+          <p><b>Installation Location</b></p>
+          <p><label style="font-size: medium; color: gray;"><b>{{product.InstallationLocation}}</b></label></p>
+        </div>
+    </ion-item>
+
+
+</ion-content>

@@ -1,0 +1,57 @@
+
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="assets/icon/download.png">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+
+<ion-content class="ion-padding">
+  <form> 
+    <ion-list>
+      <ion-item>
+        <img src="assets/icon/download.png">
+      </ion-item><br><br>
+      <ion-item>
+        <ion-input placeholder="Name" type="text" name="Name"></ion-input>
+      </ion-item><br><br>
+
+      <ion-item>
+        <ion-input placeholder="Phone Number" type="number" name="Mobile"></ion-input>
+      </ion-item><br><br>
+
+      <ion-item>
+        <ion-input placeholder="Email" type="text" name="Email"></ion-input>
+      </ion-item><br><br>
+
+      <ion-item>
+        User Type
+        <!--<select (change)="selectChangeHandler($event)">
+          <option value="ABC">ABC</option>
+          <option value="XYZ">XYZ</option>
+          <option value="LMN">LMN</option>
+        </select><br><br>
+      -->
+        <ion-select placeholder="Select Any">
+          <ion-select-option value="ABC">ABC</ion-select-option>
+          <ion-select-option value="EFG">EFG</ion-select-option>
+          <ion-select-option value="HIJ">HIJ</ion-select-option>
+        </ion-select>
+      </ion-item><br><br>
+     
+     
+    <!--
+<ion-button color="white" style="color: midnightblue;">Skip</ion-button>
+      <ion-button (click)="gotoIndex()">Let's Start</ion-button>
+      <ion-button (click)="goto()">Go</ion-button>
+    -->  
+     <div>
+     <ion-button color="white" style="color: midnightblue;" (click)="gonext()">Skip</ion-button>
+      <ion-button color="primary" (click)="goto()">Let's Start</ion-button>
+     </div>
+    </ion-list><br><br>
+  
+  </form>
+</ion-content>

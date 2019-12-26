@@ -1,0 +1,32 @@
+<header>
+  <img src="assets/icon/logo.png">
+</header>
+
+<ion-content>
+<ion-list>
+  <ion-item *ngFor="let item of Products">
+    <div>
+    <ion-card [routerLink]="['/pdetail',item.Id]">
+      <ion-row>
+      <ion-col size="4">
+        <img src="assets/icon/aircompressor.png">
+       </ion-col>
+      <ion-col size="8">
+        <ion-item>
+          <div>
+            <p style="color: black; font-size: large;">{{item.Name}}</p>
+            <p><b></b></p>
+            <p><label>${{item.Price}}</label><b></b></p>
+            <p><label>KB Part No.{{item.KB_Part_No}}</label><b></b></p>
+            <p><label >Part No.{{item.AM_Part_No}}</label><b></b></p>
+            <p><label >Part No.{{item.OEM_Part_No}}</label><b></b></p>
+          </div>
+          
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    </ion-card>
+    </div>
+  </ion-item>
+</ion-list>
+</ion-content>

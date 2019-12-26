@@ -1,0 +1,24 @@
+<header>
+  <img src="assets/icon/logo.png">
+</header>
+<ion-content >
+  <p style="margin-left: 25px; color:black;"><b><h4>Vehical Make</h4></b></p>
+  
+  <ion-grid>
+  
+    <ion-row>
+      <ion-col size=6  *ngFor="let company of Companies">
+        <ion-card class="text-center" class="ion-padding"  [routerLink]="['/tatamotarsdetail',company.Id]">
+          <img src="{{company.Logo}}">
+          <h6>{{company.Name}}</h6>
+        </ion-card>
+      </ion-col>
+     
+     
+    </ion-row>
+   
+  
+ 
+  </ion-grid>
+
+</ion-content>

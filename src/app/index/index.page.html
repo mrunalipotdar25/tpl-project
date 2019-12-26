@@ -1,0 +1,89 @@
+<header>
+  <img src="assets/icon/logo.png">
+</header>
+
+<ion-content padding>
+<ion-content>
+  <ion-slides pager>
+    <ion-slide><img src="assets/icon/tatasignaqqqqw.png" ></ion-slide>
+    <ion-slide><img src="assets/icon/tatasigna.jpg" ></ion-slide>
+    <ion-slide><img src="assets/icon/tatalpt.png" ></ion-slide>
+   
+  </ion-slides>
+
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <div>
+    <ion-item *ngFor="let user of Users">
+      <p style="font-size:x-large; color:black;"><b>Hi {{user.Name}},<br>
+        How Can I Help You?</b></p>
+    </ion-item>
+   
+  </div>
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size=4>
+          <ion-card padding>
+            <img src="assets/products.svg"  (click)="allprod()">
+            <p text-center><b>Products</b></p>
+          
+          </ion-card>
+        </ion-col>
+        <ion-col size=4>
+          <ion-card text-center padding (click)="pricelist()">
+            <img src="assets/pricelist.svg">
+            <p><b>Price List</b></p>
+          </ion-card>
+        </ion-col> 
+        <ion-col size=4 >
+          <ion-card text-center padding>
+            <img src="assets/distributors.svg">
+            <p><b>Distributor</b></p>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size=4>
+          <ion-card text-center padding>
+            <img src="assets/service.svg">
+            <p><b>Service Center</b></p>
+          </ion-card>
+        </ion-col>
+        <ion-col size=4>
+          <ion-card text-center padding>
+            <img src="assets/maintenance.svg">
+            <p><b>Maintenance&Troubleshooting</b></p>
+          </ion-card>
+        </ion-col>
+        <ion-col size=4 >
+          <ion-card text-center padding>
+            <img src="assets/contact.svg">
+            <p><b>Contact Us</b></p>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div>
+      <p style="font-size:x-large; color:black"><b>What's New?
+      </b></p>
+    </div>
+
+    <ion-card padding style="width: auto;">
+      <p href="" style=""><u>abced</u></p>
+      <p>Jan 2019</p>
+      <p href="" style=""><u>abced</u></p>
+      <p>Jan 2019</p>
+      <p href="" style=""><u>abced</u></p>
+      <p>Jan 2019</p>
+    </ion-card>
+  
+    <p style="font-size:x-large; color:black"><b>Favourite Items</b></p>
+</ion-content>
+
+
+</ion-content>
+
+
+ 
