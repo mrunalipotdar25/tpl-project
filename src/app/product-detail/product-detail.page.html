@@ -1,5 +1,7 @@
 <header>
-  <img src="assets/icon/logo.png">
+  <ion-buttons slot="start"> <ion-back-button defaultHref="home"></ion-back-button> 
+    <img src="assets/icon/logo.png">
+  </ion-buttons>
 </header>
 
 <ion-content>
@@ -9,15 +11,16 @@
        
       <div>
         
-          <ion-card>
-            <img src="{{product.Picture}}">
-          </ion-card>
+        
+            <img  style="align-items: center; margin-left: 50px; height: 70%;width: 70%;" src="{{product.Picture}}">
+         
           
         
           <p style="font-size: large; color: #000;"><b>{{product.Name}}</b></p>
-          <p>{{product.Price}}</p>
+          <p>${{product.Price}}</p>
           <p></p>
-          <p><label style="color: gray;">Vehical Model:{{product.ModelNo[0].ModelNo}}</label><b></b></p> 
+          <p><label style="color: gray;">Vehical Model:{{product.Model[0].ModelNo}}</label><b></b></p> 
+          <img class="pic" src="{{product.Model[0].CompanyLogo[0].Logo}}">
           <p><label style="color: gray;">KB Part No.{{product.KB_Part_No}}</label><b></b></p>
           <p><label style="color: gray;">AM Part No.{{product.AM_Part_No}}</label><b></b></p>
           <p><label style="color: gray;">Part No.{{product.OEM_Part_No}}</label><b></b></p>
@@ -27,12 +30,22 @@
           <p><b>Functions</b></p>
           <p><label style="font-size: medium; color: gray;"><b>{{product.Product_Function}}</b></label></p>
           <p><b>Features</b></p>
-         
           <p><label style="font-size: medium; color: gray;"><b>{{product.Features}}</b></label></p>
+          <p href="#"><u style="color: blue;">See Less</u></p>
           <p><b>Installation Location</b></p>
           <p><label style="font-size: medium; color: gray;"><b>{{product.InstallationLocation}}</b></label></p>
         </div>
     </ion-item>
 
+    <ion-card style="background-color:  rgb(218, 218, 218);">
+      <p  style="color: black; font-size: medium;"><b>Repair Kits<ion-icon name="md-arrow-back" slot="end"></ion-icon></b></p>
+    </ion-card>
 
+    <ion-card style="background-color:  rgb(218, 218, 218);">
+      <p style="color: black; font-size: medium;"><b>Service Manual<ion-icon name="md-arrow-back" slot="end"></ion-icon></b></p>
+    </ion-card>
+
+    <button style="background-color:  rgb(7, 9, 114); width: 100%;" >
+      <p style="color: white; font-size: medium;"><b>Enquiry</b></p>
+    </button>
 </ion-content>

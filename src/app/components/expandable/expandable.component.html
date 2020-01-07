@@ -1,0 +1,19 @@
+
+<ion-card>
+  <ion-card-header (click)="toggleAccordion()" class="card-header">
+   <p style="color:black"><b> {{title}}</b></p>
+  </ion-card-header>
+  <ion-card-content #cc class="card-content">
+   <ion-list *ngFor="let prod of Products">
+     <ion-row>
+       <ion-col size="8"> <label style="color:black"><b><li>{{prod.Name}}</li></b></label></ion-col>
+       <ion-col size="4">   <label style="color:black"><b>$ {{prod.Price}}</b></label></ion-col>
+     
+      </ion-row>
+ 
+    <li>KB Part No. <b>{{prod.KB_Part_No}}</b></li>
+    <li>AM Part No. <b>{{prod.AM_Part_No}}</b></li>
+   </ion-list>
+  </ion-card-content>
+  
+</ion-card>

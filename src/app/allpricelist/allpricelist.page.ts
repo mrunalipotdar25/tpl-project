@@ -1,4 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit,Renderer,QueryList, ElementRef, ViewChildren, Renderer2, ViewChild, } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import {RestService} from '../rest.service';
+import {searchpage} from './allprice.model';
 
 @Component({
   selector: 'app-allpricelist',
@@ -7,17 +10,31 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class AllpricelistPage implements OnInit {
 
-  accordionExpanded = false;
 
-  constructor() { }
-
-  ngOnInit() {
+  Products:any;
+  productdata:any;
+  visible = false;
+  toggle() {
+   this.visible = !this.visible;
   }
-
   
-
-  toggleAccordion()
-  {
-
+  constructor(public route:ActivatedRoute,public restProvider:RestService,public renderer:Renderer) 
+  { 
   }
+
+ 
+  ngOnInit() {
+  
+  
+   this.restProvider.getCategeory().then(data=>{
+    this.Products=data;
+  
+  });
+  }
+
+   
+
+
+
+ 
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { Router, ActivatedRoute } from '@angular/router';
+import {RestService} from '../rest.service';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -8,12 +8,15 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
- 
+  Users: any;
   splash = true;
-  
+  Name:any;
+  Mobile:any;
+  Email:any;
+  select:any;
+  dataFromService :any =[];
 
-
-  constructor(private router: Router) {
+  constructor(private router: Router,public restProvider:RestService,public route: ActivatedRoute) {
 
   }
 
@@ -33,8 +36,16 @@ export class HomePage {
   }
 
   ngOnInit()
-  {
-    this.ionViewDidLoad();
+  {this.ionViewDidLoad();
   }
 
+  postmethod()
+  {
+    let myDate: Date = new Date();
+    console.log('date',myDate);
+    var userData = {Name:this.Name,Mobile:this.Mobile,Email:this.Email,UserType:this.select,DateOfRegistration:myDate};
+    this.restProvider.postuser(userData).subscribe((dataReturnFromService)=>{
+      this.dataFromService = JSON.stringify(dataReturnFromService);
+    });
+  }
 }

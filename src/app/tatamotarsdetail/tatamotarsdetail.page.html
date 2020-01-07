@@ -1,18 +1,19 @@
 <header>
-  <img src="assets/icon/logo.png">
+  <ion-buttons slot="start"> <ion-back-button defaultHref="home"></ion-back-button> 
+    <img src="assets/icon/logo.png">
+  </ion-buttons>
 </header>
 
-<ion-content>
-  <p style="margin-left: 25px; color: black;"><b><h4>Tata Motors</h4></b></p>
+<ion-content >
+  <p style="margin-left: 25px; color: black;" *ngFor="let company of Companies"><b><h4>{{company.Name}}</h4></b></p>
 
   <ion-grid fixed>
     <ion-row>
       <ion-col size="12">
-        <ion-segment scrollable>
-          <ion-segment-button *ngFor="let category of categories" value="{{category}}">
-            <ion-label>{{category}}</ion-label>
-          </ion-segment-button>
-         
+        <ion-segment scrollable [(ngModel)]="duty">
+          <ion-segment-button value="Light Duty" (click)="getDuty('Light Duty')">Light Duty</ion-segment-button>
+          <ion-segment-button value="Medium Duty" (click)="getDuty('Medium Duty')">Medium Duty</ion-segment-button>
+          <ion-segment-button value="Heavy Duty" (click)="getDuty('Heavy Duty')">Heavy Duty</ion-segment-button>
         </ion-segment>
       </ion-col>      
     </ion-row>
@@ -20,12 +21,12 @@
 
   <ion-grid>
    <div> 
-    <ion-row *ngFor="let vehicle of Vehicles">
-      <ion-item  [routerLink]="['/lpt',vehicle.KB_Part_No]">
-        <ion-col size=6>
-        <ion-card text-center padding>
+    <ion-row *ngFor="let vehicle of Companiesas">
+      <ion-item  [routerLink]="['./',vehicle.KB_Part_No]" >
+        <ion-col size="6">
+        <ion-card class="padding">
           <img src="{{vehicle.Picture}}" >
-          <p></p>{{vehicle.Name}}
+          <p style="text-align: center;">{{vehicle.Name}}</p>
         </ion-card>
       </ion-col>
     </ion-item>

@@ -18,7 +18,7 @@ getProduct()
   {
     this.restProvider.getprod().then(data=>{
       this.Products=data;
-      console.log(this.Products);
+    
     });
   }
 

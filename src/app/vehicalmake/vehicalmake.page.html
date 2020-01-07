@@ -1,16 +1,18 @@
 <header>
-  <img src="assets/icon/logo.png">
+  <ion-buttons slot="start"> <ion-back-button defaultHref="home"></ion-back-button> 
+    <img src="assets/icon/logo.png">
+  </ion-buttons>
 </header>
 <ion-content >
-  <p style="margin-left: 25px; color:black;"><b><h4>Vehical Make</h4></b></p>
+  <p style="margin-left: 30px; font-size: large;"><b>Vehical Make</b></p>
   
   <ion-grid>
   
     <ion-row>
       <ion-col size=6  *ngFor="let company of Companies">
-        <ion-card class="text-center" class="ion-padding"  [routerLink]="['/tatamotarsdetail',company.Id]">
+        <ion-card class="text-center" class="ion-padding"  [routerLink]="['tatamotarsdetail/',company.Id]">
           <img src="{{company.Logo}}">
-          <h6>{{company.Name}}</h6>
+          <p><b>{{company.Name}}</b></p>
         </ion-card>
       </ion-col>
      

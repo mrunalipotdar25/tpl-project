@@ -26,10 +26,10 @@ export class ProductDetailPage implements OnInit {
         return;
       }
       const productId=paramMap.get('productId');
-      console.log(productId);
+ 
       this.restProvider.getProduct(Number(productId)).then(data=>{
         this.Products=data;
-        console.log(this.Products);
+      
       })
     });
 

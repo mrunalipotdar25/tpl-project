@@ -1,5 +1,7 @@
 <header>
-  <img src="assets/icon/logo.png">
+  <ion-buttons slot="start"> <ion-back-button defaultHref="home"></ion-back-button> 
+    <img src="assets/icon/logo.png">
+  </ion-buttons>
 </header>
 
 <ion-content>
@@ -17,9 +19,12 @@
             <p style="color: black; font-size: large;">{{item.Name}}</p>
             <p><b></b></p>
             <p><label>${{item.Price}}</label><b></b></p>
+            <img style="height: 25%;
+            width: 25%;
+            " src="{{item.Model[0].CompanyLogo[0].Logo}}">
             <p><label>KB Part No.{{item.KB_Part_No}}</label><b></b></p>
-            <p><label >Part No.{{item.AM_Part_No}}</label><b></b></p>
-            <p><label >Part No.{{item.OEM_Part_No}}</label><b></b></p>
+            <p><label>AM Part No.{{item.AM_Part_No}}</label><b></b></p>
+            <p><label >OEM Part No.{{item.OEM_Part_No}}</label><b></b></p>
           </div>
           
         </ion-item>

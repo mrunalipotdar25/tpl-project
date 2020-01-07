@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: IndexPage
+  },
+  {
+    path: 'indexmodel',
+ //   loadChildren: () => import('./indexmodel/indexmodel.module').then( m => m.IndexmodelPageModule)
   }
 ];
 

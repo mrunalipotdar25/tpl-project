@@ -4,20 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { IndexPageRoutingModule } from './index-routing.module';
+import { VehicalByPricePageRoutingModule } from './vehical-by-price-routing.module';
 
-import { IndexPage } from './index.page';
+import { VehicalByPricePage } from './vehical-by-price.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    IndexPageRoutingModule
+    VehicalByPricePageRoutingModule
   ],
-  declarations: [IndexPage]
+  declarations: [VehicalByPricePage]
 })
-export class IndexPageModule {
-
-  Name: string;
-}
+export class VehicalByPricePageModule {}

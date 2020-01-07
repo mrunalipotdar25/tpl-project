@@ -1,73 +1,21 @@
 <header>
-  <img src="assets/icon/logo.png">
+  <ion-buttons slot="start"> <ion-back-button defaultHref="home"></ion-back-button> 
+    <img src="assets/icon/logo.png">
+  </ion-buttons>
 </header>
 
 <ion-content>
-  <div><br>
-    <p style="margin-left: 15px; font-size: large;"><b>Price List</b></p>
-  </div>
-  <ion-card  color="black">
-    <ion-item>
-    <b>Air Compressor</b>
-  </ion-item>
-  </ion-card>
+  <div></div><br><br>
+  <label style="font-size: large; color: black; margin-left: 20px;"><b>All Products</b></label>
 
-  <ion-card color="black">
-    <ion-item>
-    <b>Air Dryer</b>
-  </ion-item>
-  </ion-card>
+   
+       <app-expandable *ngFor="let p of Products" [title]="p.ProductType">
 
-  <ion-card  color="black">
-    <ion-item>
-    <b>Four Circuit Protection Valve</b>
-  </ion-item>
-  </ion-card>
-
+        
+       </app-expandable >
   
-  <ion-card  color="black">
-    <ion-item>
-    <b>Relay Valve</b>
-  </ion-item>
-  </ion-card>
-
+   
+ 
+ 
   
-  <ion-card   color="black">
-    <ion-item>
-    <b>Quick Release Valve</b>
-   </ion-item>
-  </ion-card>
-
-  
-  <ion-card   color="black">
-    <ion-item>
-    <b>Spring Break Actuator</b>
-  </ion-item>
-  </ion-card>
-
-  <ion-card  color="black">
-    <ion-item>
-    <b>Break Chamber</b>
-  </ion-item>
-  </ion-card>
-
-  
-  <ion-card  color="black">
-    <ion-item>
-    <b>Automatic Slack Adjuster</b>
-  </ion-item>
-  </ion-card>
-
-  <ion-card  color="black">
-    <ion-item>
-    <b>Pressure Limiting Valve</b>
-    </ion-item>
-  </ion-card>
-
-  
-  <ion-card  color="black">
-    <ion-item>
-    <b>Automatic Load Sensing Valve</b>
-  </ion-item>
-  </ion-card>
 </ion-content>

@@ -1,20 +1,43 @@
 <header>
-  <img src="assets/icon/logo.png">
+  <ion-card style="height: auto; width: auto; margin-left: 10px;">
+    <img src="assets/icon/logo.png">
+  </ion-card>
+
 </header>
 
 <ion-content padding>
 <ion-content>
-  <ion-slides pager>
-    <ion-slide><img src="assets/icon/tatasignaqqqqw.png" ></ion-slide>
+  <ion-slides autoplay="1000" loop="true" speed="500" pager>
+    <ion-slide><img src="assets/slideone.png" ></ion-slide>
     <ion-slide><img src="assets/icon/tatasigna.jpg" ></ion-slide>
     <ion-slide><img src="assets/icon/tatalpt.png" ></ion-slide>
    
   </ion-slides>
 
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-searchbar (ionChange)="getItems($event)" showCancelButton animated placeholder="All Products,Companies,Vehicals" (click)="toggleAccordion()"></ion-searchbar>
+  
+      <ion-list #cc >
+          <ion-list #cc *ngFor="let item of lista" >
+            <ion-list [routerLink]="['/pdetail',item.Id]"> {{item.Name}} </ion-list>
+         
+          </ion-list>
+          <ion-list #cc *ngFor="let item1 of listsecondComapny" >
+            <ion-list  [routerLink]="['/vehicalmake']">{{item1.Name}} </ion-list>
+        
+          </ion-list>
+          <ion-list #cc *ngFor="let item2 of listVehicle" >
+            <ion-list [routerLink]="['/vehicalmake/tatamotarsdetail/kbno/',item2.KB_Part_No]">{{item2.KB_Part_No}} </ion-list>
+            <ion-list [routerLink]="['/vehicalmake/tatamotarsdetail/kbno/',item2.KB_Part_No]">{{item2.Name}} </ion-list>
+          </ion-list>
+        </ion-list>
+  
+  
+  
+
+    
   <div>
-    <ion-item *ngFor="let user of Users">
-      <p style="font-size:x-large; color:black;"><b>Hi {{user.Name}},<br>
+    <ion-item >
+      <p style="font-size:x-large; color:black;"><b>Hi {{userId}},<br>
         How Can I Help You?</b></p>
     </ion-item>
    
@@ -24,20 +47,20 @@
     <ion-grid>
       <ion-row>
         <ion-col size=4>
-          <ion-card padding>
+          <ion-card class="ion-padding">
             <img src="assets/products.svg"  (click)="allprod()">
-            <p text-center><b>Products</b></p>
+            <p class="text-center"><b>Products</b></p>
           
           </ion-card>
         </ion-col>
         <ion-col size=4>
-          <ion-card text-center padding (click)="pricelist()">
+          <ion-card class="text-center" class="ion-padding" (click)="pricelist()">
             <img src="assets/pricelist.svg">
             <p><b>Price List</b></p>
           </ion-card>
         </ion-col> 
         <ion-col size=4 >
-          <ion-card text-center padding>
+          <ion-card class="text-center" class="ion-padding">
             <img src="assets/distributors.svg">
             <p><b>Distributor</b></p>
           </ion-card>
@@ -45,19 +68,19 @@
       </ion-row>
       <ion-row>
         <ion-col size=4>
-          <ion-card text-center padding>
+          <ion-card class="text-center" class="ion-padding">
             <img src="assets/service.svg">
             <p><b>Service Center</b></p>
           </ion-card>
         </ion-col>
         <ion-col size=4>
-          <ion-card text-center padding>
+          <ion-card class="ion-padding">
             <img src="assets/maintenance.svg">
-            <p><b>Maintenance&Troubleshooting</b></p>
+            <p style="font-size: small;"><b>Maintenance&Troubleshooting</b></p>
           </ion-card>
         </ion-col>
         <ion-col size=4 >
-          <ion-card text-center padding>
+          <ion-card class="text-center" class="ion-padding">
             <img src="assets/contact.svg">
             <p><b>Contact Us</b></p>
           </ion-card>
@@ -70,16 +93,55 @@
       </b></p>
     </div>
 
-    <ion-card padding style="width: auto;">
-      <p href="" style=""><u>abced</u></p>
-      <p>Jan 2019</p>
-      <p href="" style=""><u>abced</u></p>
-      <p>Jan 2019</p>
-      <p href="" style=""><u>abced</u></p>
-      <p>Jan 2019</p>
+<ion-card class="ion-padding" style="width: auto; height: auto;">
+    <div>
+      <label href="" ><u><b>Dayton/Ohio:Kiepe Electric to equipanother15 buses with...</b></u></label>
+     <br> <label>January 16, 2019</label><br><br>
+      <label href="" ><u><b>Knorr-Bremse presents strong figures for the first nine months of 2018</b></u></label>
+      <br>  <label>November 28,2018</label><br><br>
+      <label href="" ><u><b>Kiepe Electric to supply electrical equipment for Erfurt transport authority's new LRVs</b></u></label>
+      <br>  <label>January 23, 2018</label>
+    </div>
+</ion-card>
+  <ion-row>
+    <ion-col size="8">
+        <p style="font-size:x-large; color:black"><b>Favourite Items</b></p> 
+    </ion-col>
+    <ion-col size="4">
+      <div><br>
+        <ion-button style="background-color :white; width:80%;" >Show All</ion-button>
+      </div>
+    
+    </ion-col>
+  </ion-row>  
+    
+
+  <ion-slides pager>
+  <ion-slide>
+      <ion-card style="height: 100%;width: 50% ;"><img src="assets/quick.png" style="height: 100%; width: 60%;margin-left: 40px;">
+        <p><b>Quick Valve Release</b></p>
+        <p>$2356</p>
+      </ion-card>
+      <ion-card style="height: 100%;width:50% ;"><img src="assets/spring.png" style="height: 100%; width: 60%; margin-left: 40px;">
+        <p><b>Spring Break</b></p>
+        <p>$5467</p>
+      </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card style="height: 100%;width: 50% ;"><img src="assets/quick.png" style="height: 100%; width: 60%;margin-left: 40px;">
+      <p><b>Quick Valve Release</b></p>
+      <p>$2356</p>
     </ion-card>
-  
-    <p style="font-size:x-large; color:black"><b>Favourite Items</b></p>
+    <ion-card style="height: 100%;width:50% ;"><img src="assets/spring.png" style="height: 100%; width: 60%; margin-left: 40px;">
+      <p><b>Spring Break</b></p>
+      <p>$5467</p>
+    </ion-card>
+  </ion-slide>
+
+</ion-slides>
+
+<p style="font-size:x-large; color:black"><b>Want To Know More?</b></p> 
+<p href="www.knorr-bremsecvs.com">Visit <u style="color: blue;">www.knorr-bremsecvs.com</u></p>
 </ion-content>
 
 

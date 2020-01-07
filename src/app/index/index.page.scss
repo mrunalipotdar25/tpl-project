@@ -12,6 +12,7 @@ ion-searchbar
 }
 
 
+
 ion-card
 {
     height:120px;
@@ -33,4 +34,26 @@ ion-card
 p{
     color: black;
     font-size: medium;
+}
+index{
+    .card-content
+    {
+        padding: 0px 16px;
+        max-height: 0px;
+    }
+}
+
+header{
+    img{
+        height: 60%;
+        width: 60%;
+        margin-top: 10px;
+        margin-left: 80px;
+        align-items: center;
+    }
+}
+
+label{
+    font-size: medium;
+    color: #000;
 }

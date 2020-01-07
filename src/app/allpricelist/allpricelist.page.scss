@@ -1,9 +1,20 @@
 
 header{
     img{
-        height: 80%;
-        width: 75%;
-        margin-left: 40px;
+        height: 60%;
+        width: 60%;
         margin-top: 10px;
+        margin-left: 30px;
+        align-items: center;
     }
 }
+
+ion-header{
+    color:white;
+
+    ion-card-content{
+        padding : 0px 16px;
+        max-height: 0px;
+    }
+}
+

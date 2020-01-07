@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import {RestService} from '../rest.service';
 
 @Component({
   selector: 'app-pricelist',
@@ -7,18 +8,38 @@ import { Router } from '@angular/router';
   styleUrls: ['./pricelist.page.scss'],
 })
 export class PricelistPage implements OnInit {
-
-  constructor(private route:Router)
+ Products:any;
+  constructor(private router:Router,public route:ActivatedRoute,public restProvider:RestService)
   {
 
    }
 
   ngOnInit() {
+  
+    this.route.paramMap.subscribe(paramMap=>{
+      if(!paramMap.has('productId'))
+      {
+        return;
+      }
+      const productId=paramMap.get('productId');
+ 
+      this.restProvider.getProduct(Number(productId)).then(data=>{
+        this.Products=data;
+      
+      })
+    });
   }
 
-  productpage()
+ productpage()
   {
-      this.route.navigate((['\allpricelist']));
+      this.router.navigate((['/allpricelist']));
   }
+
+  
+  vechicalmakepage()
+  {
+    this.router.navigate(['/vehicalmake1']);
+  }
+  
 
 }

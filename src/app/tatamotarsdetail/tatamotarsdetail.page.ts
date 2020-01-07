@@ -10,14 +10,19 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TatamotarsdetailPage implements OnInit {
 
+  VehicleId:any;
   Products:any;
   Vehicles:any;
-  categories =['Light Duty','Medium Duty','High Duty'];
-  
+ // categories =['Light Duty','Medium Duty','High Duty'];
+  Companies:any;
+  Companiesas:any;
   constructor(private route:Router,public restProvider:RestService,public router:ActivatedRoute,public http:HttpClient) 
   {
    // this.getProducts();
     //this.getVehicles();
+  
+    
+  
    }
 
   tatalptpage()
@@ -31,33 +36,27 @@ export class TatamotarsdetailPage implements OnInit {
       {
         return;
       }
-      const VehicleId=paramMap.get('VehicleId');
-      console.log(VehicleId);
-      this.restProvider.getvehi(Number(VehicleId)).then(data=>{
-        this.Vehicles=data;
-        console.log(this.Vehicles);
-      })
+      this.VehicleId=paramMap.get('VehicleId');
+   
+
+    
+    this.restProvider.getCompany(Number(this.VehicleId)).then(data=>{
+      this.Companies=data;
+     
+     
+      });
+      this.getDuty('Light Duty');
     });
    
   }
 
-  // getProducts()
-  // {
-  //   this.restProvider.getProduct().then(data=>{
-  //     this.Products=data;
-  //     console.log(this.Products);
-  //   });
-  // }
-
-  // getVehicles()
-  // {
-  //   this.restProvider.getVehical().then(data=>{
-  //     this.Vehicles=data;
-  //     console.log(this.Vehicles);
-  //   });
-  // }
-
-
+  getDuty(type : string)
+  {
+    this.restProvider.getType(Number(this.VehicleId),type).then(data=>{
+      this.Companiesas=data;
+   
+      });
+  }
 
 
 }

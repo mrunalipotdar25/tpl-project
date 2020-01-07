@@ -23,7 +23,7 @@ export class VehicalmakePage implements OnInit {
   {
     this.restProvider.Companypage().then(data=>{
       this.Companies=data;
-      console.log(this.Companies);
+    
     });
   }
   ngOnInit() {

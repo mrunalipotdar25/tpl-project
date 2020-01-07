@@ -4,26 +4,19 @@ import { Route } from '@angular/compiler/src/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-tatalptdetail',
-  templateUrl: './tatalptdetail.page.html',
-  styleUrls: ['./tatalptdetail.page.scss'],
+  selector: 'app-vehical-by-price',
+  templateUrl: './vehical-by-price.page.html',
+  styleUrls: ['./vehical-by-price.page.scss'],
 })
-export class TatalptdetailPage implements OnInit {
+export class VehicalByPricePage implements OnInit {
 
-  Products:any;
-  
-
+  Products :any;
+  Vehicals :any;
   constructor(public restProvider:RestService,private route: Router,public router:ActivatedRoute) 
-  {
-  
-   }
+  { 
+    
+  }
 
-  
-
-   productdetail()
-   {
-      this.route.navigate(['/product-detail']);
-   }
   ngOnInit() {
 
     this.router.paramMap.subscribe(paramMap=>{
@@ -32,16 +25,19 @@ export class TatalptdetailPage implements OnInit {
         return;
       }
       const kbno=paramMap.get('kbno');
-     
-      this.restProvider.getproductbyVehicle(kbno).then(data=>{
+
+      this.restProvider.getproductbyVehicle(String(kbno)).then(data=>{
         this.Products=data;
-  
+     
       })
     });
+
+   
   }
 
 
-  
-
-
+  vehiclename()
+  {
+   
+  }
 }

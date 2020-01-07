@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { AllpricelistPageRoutingModule } from './allpricelist-routing.module';
-
+import { ExpandableComponent } from "../components/expandable/expandable.component";
 import { AllpricelistPage } from './allpricelist.page';
 
 @NgModule({
@@ -15,6 +15,6 @@ import { AllpricelistPage } from './allpricelist.page';
     IonicModule,
     AllpricelistPageRoutingModule
   ],
-  declarations: [AllpricelistPage]
+  declarations: [AllpricelistPage,ExpandableComponent]
 })
 export class AllpricelistPageModule {}
