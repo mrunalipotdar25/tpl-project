@@ -11,20 +11,18 @@
     <ion-card [routerLink]="['/pdetail',item.Id]">
       <ion-row>
       <ion-col size="4">
-        <img src="assets/icon/aircompressor.png">
+        <img class ="img1" src="/assets/air.png">
        </ion-col>
       <ion-col size="8">
         <ion-item>
           <div>
             <p style="color: black; font-size: large;">{{item.Name}}</p>
-            <p><b></b></p>
-            <p><label>${{item.Price}}</label><b></b></p>
-            <img style="height: 25%;
-            width: 25%;
-            " src="{{item.Model[0].CompanyLogo[0].Logo}}">
-            <p><label>KB Part No.{{item.KB_Part_No}}</label><b></b></p>
-            <p><label>AM Part No.{{item.AM_Part_No}}</label><b></b></p>
-            <p><label >OEM Part No.{{item.OEM_Part_No}}</label><b></b></p>
+         
+            <p><label>${{item.Price}}</label></p>
+            <img style="height: 25%;width: 25%;" src="{{item.Model[0].CompanyLogo[0].Logo}}">
+            <p><label>KB Part No.<b>{{item.KB_Part_No}}</b></label><b></b></p>
+            <p><label>AM Part No.<b>{{item.AM_Part_No}}</b></label><b></b></p>
+            <p><label >OEM Part No.<b>{{item.OEM_Part_No}}</b></label><b></b></p>
           </div>
           
         </ion-item>

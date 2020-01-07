@@ -11,14 +11,16 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class TatalptdetailPage implements OnInit {
 
   Products:any;
+
   
 
   constructor(public restProvider:RestService,private route: Router,public router:ActivatedRoute) 
   {
-  
+    
    }
 
   
+
 
    productdetail()
    {
